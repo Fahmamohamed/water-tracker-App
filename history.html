@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Tracker | Taariikhda Cabitaanka</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+        .history-list {
+            max-width: 700px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        
+        .history-header {
+            background: #0077b6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .log-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            border-bottom: 1px solid #e0f2fe;
+            transition: 0.3s;
+        }
+
+        .log-entry:hover {
+            background: #f0f9ff;
+            transform: scale(1.01);
+        }
+
+        .amount-tag {
+            background: #caf0f8;
+            color: #0077b6;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .time-tag {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .no-data {
+            padding: 40px;
+            text-align: center;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a> 
+        <a href="tracker.html">Tracker</a> 
+        <a href="history.html" style="border-bottom: 2px solid white;">History</a> 
+        <a href="about.html">About</a> 
+        <a href="settings.html">Settings</a>
+    </nav>
+
+    <div class="container">
+        <h1 style="text-align: center; color: #0077b6; margin-bottom: 10px;">Xusuus-qorkaaga</h1>
+        <p style="text-align: center; margin-bottom: 30px;">Halkan ka eeg biyihii aad cabtay iyo xilliyadii aad qaadatay.</p>
+
+        
+
+        <div class="history-list">
+            <div class="history-header">
+                <h3>💧 Liiska Cabitaanka Maanta</h3>
+            </div>
+            <div id="logListFull">
+                <div class="no-data">Weli ma jirto xog la diwaangeliyey.</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <button onclick="window.location.href='tracker.html'" style="background: #00b4d8;">Ku Noqo Tracker-ka</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>💧 Water Tracker</h4>
+                <p>La soco taariikhdaada si aad u ogaato haddii aad horumar samaynayso.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Nabadgelyo</h4>
+                <p>Xogtaadu waxay ku kaydsan tahay birawsarkaaga (Local Storage).</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:20px; opacity:0.7;">
+            &copy; 2026 WaterTracker | Data History
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

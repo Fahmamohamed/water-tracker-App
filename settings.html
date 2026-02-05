@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterTracker | Settings</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+        .settings-container {
+            max-width: 550px;
+            margin: 60px auto;
+        }
+
+        .settings-card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 6px solid #e74c3c;
+        }
+
+        .setting-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .setting-info h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .setting-info p {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        .danger-zone {
+            margin-top: 30px;
+            background: #fff5f5;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px dashed #feb2b2;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a> 
+        <a href="tracker.html">Tracker</a> 
+        <a href="history.html">History</a> 
+        <a href="about.html">About</a> 
+        <a href="settings.html" style="border-bottom: 2px solid white;">Settings</a>
+    </nav>
+
+    <div class="container settings-container">
+        <div class="settings-card">
+            <h2 id="stg-title" style="color: #2c3e50; margin-bottom: 10px;">Hagaajinta Xogta</h2>
+            <p id="stg-subtitle" style="margin-bottom: 30px;">Maamul xogtaada iyo hadafyadaada gaarka ah.</p>
+
+            <div class="setting-row">
+                <div class="setting-info">
+                    <h4 id="lbl-lang">Luqadda App-ka</h4>
+                    <p id="desc-lang">Dooro luqadda aad rabto inuu app-ku ku shaqeeyo.</p>
+                </div>
+                <select id="langSelect" onchange="changeLanguage()" style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+                    <option value="so">Soomaali</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+
+            <div class="setting-row">
+                <div class="setting-info">
+                    <h4 id="lbl-unit">Cabirka (Units)</h4>
+                    <p id="desc-unit">Milliliters (ml) ama Liters (L).</p>
+                </div>
+                <select id="unitSelect" onchange="changeUnit()" style="padding: 8px; border-radius: 5px; border: 1px solid #ddd; font-weight: bold; color: #0077b6;">
+                    <option value="ml">ML</option>
+                    <option value="L">Liters (L)</option>
+                </select>
+            </div>
+
+            <div class="danger-zone">
+                <h4 id="lbl-danger" style="color: #c53030; margin-bottom: 10px;">⚠️ Danger Zone</h4>
+                <p id="desc-danger" style="font-size: 0.85rem; color: #742a2a; margin-bottom: 15px;">
+                    Haddii aad riixdo badhanka hoose, dhammaan xogtaada (Goals, Progress, Logs) waa la tirtiri doonaa.
+                </p>
+                <button onclick="resetTracker()" style="background: #e74c3c; width: 100%; padding: 12px; border: none; border-radius: 10px; color: white; font-weight: bold; cursor: pointer;">
+                    Reset All Data
+                </button>
+            </div>
+            <div id="message" style="margin-top: 15px; text-align: center; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Amniga Xogta</h4>
+                <p>Xogtaadu kuma kaydsana Server, waxay ku dhex jirtaa Browser-kaaga oo kaliya.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Version Info</h4>
+                <p>WaterTracker v1.0.2</p>
+                <p>Build 2026-A</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:20px; opacity:0.6;">
+            &copy; 2026 WaterTracker | Privacy Focused.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

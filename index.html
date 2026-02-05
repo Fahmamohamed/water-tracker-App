@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterTracker | Hoyga</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a> 
+        <a href="tracker.html">Tracker</a> 
+        <a href="history.html">History</a> 
+        <a href="about.html">About</a> 
+        <a href="settings.html">Settings</a>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section" style="display: flex; align-items: center; gap: 40px; padding: 40px 0;">
+            <div class="hero-text" style="flex: 1.2;">
+                <h1 style="font-size: 3.5rem; color: #0077b6; line-height: 1.1;">Noloshu Waxay Ku Bilaabataa <span style="color: #00b4d8;">Biyo</span></h1>
+                <p style="font-size: 1.15rem; margin: 20px 0; color: #555;">
+                    Ma ogtahay in cabista biyuhu ay kordhiso tamartaada 30%? Ka dhig cabista biyaha caado maalinle ah adoo isticmaalaya Water Tracker.
+                </p>
+                
+                <div class="glass-card" style="padding: 25px; border-left: 5px solid #0077b6;">
+                    <h3 style="margin-bottom: 15px;">Deji Hadafka Maanta</h3>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="number" id="goalInput" placeholder="Tusaale: 2500 ml" style="flex: 1;">
+                        <button onclick="setGoal()">Bilaw Safari</button>
+                    </div>
+                    <div id="homeMessage" style="margin-top: 10px; font-weight: bold;"></div>
+                </div>
+            </div>
+
+            <div class="hero-image" style="flex: 1; animation: float 4s ease-in-out infinite;">
+                </div>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🎯</span>
+                <h4>Deji Hadaf</h4>
+                <p>U qoondee jirkaaga xadiga biyo ee uu u baahan yahay.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">📈</span>
+                <h4>La Soco Horumarka</h4>
+                <p>Arag boqolleyda kuu dhiman si aad u guulaysato.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">💎</span>
+                <h4>Caafimaad Joogto Ah</h4>
+                <p>Dhis caado kuu horseedda nolol firfircoon.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>💧 Water Tracker</h4>
+                <p>Ujeedkeenu waa inaan dhisno bulsho caafimaad qabta oo ku baraarugsan muhiimadda biyaha.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Xiriirka</h4>
+                <p>Email: support@watertracker.so</p>
+                <p>Mogadishu, Somalia</p>
+            </div>
+            <div class="footer-section">
+                <h4>Social Media</h4>
+                <p>Facebook | Twitter | Instagram</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:30px; opacity:0.6;">&copy; 2026 WaterTracker | All Rights Reserved.</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

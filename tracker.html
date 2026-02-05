@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterTracker | Live Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.08);
+            border-bottom: 4px solid #00b4d8;
+        }
+
+        .main-tracker-box {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            margin-top: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .water-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .dashboard-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a> 
+        <a href="tracker.html" style="border-bottom: 2px solid white;">Tracker</a> 
+        <a href="history.html">History</a> 
+        <a href="about.html">About</a> 
+        <a href="settings.html">Settings</a>
+    </nav>
+
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 20px;">
+            <h1 style="color: #0077b6;">Dabagalka Tooska Ah</h1>
+            <p>Xogtaadu waxay isku cusboonaysiisaa si toos ah.</p>
+        </header>
+
+        <div class="dashboard-container">
+            <div class="stat-card">
+                <small style="color: #666; text-transform: uppercase;">Hadafka Maanta</small>
+                <h2 id="displayGoal" style="font-size: 2.5rem; color: #0077b6;">0</h2>
+                <span style="color: #00b4d8;">Milliliters</span>
+            </div>
+
+            <div class="stat-card">
+                <small style="color: #666; text-transform: uppercase;">Wadarta Cabitaanka</small>
+                <h2 id="totalDisplay" style="font-size: 2.5rem; color: #0077b6;">0 ml</h2>
+                <span id="statusText" style="color: #00b4d8; font-weight: bold;">Weli wax maadan cabin 💧</span>
+            </div>
+        </div>
+
+        <div class="main-tracker-box">
+            <span class="water-icon">💧</span>
+            <h3>Horumarka Boqolleyda</h3>
+            
+            <div id="progressContainer" style="background: #eef2f3; height: 20px; border-radius: 10px; margin: 25px 0; overflow: hidden; border: 1px solid #d0e1f9;">
+                <div id="progressBar" style="background: linear-gradient(90deg, #00d2ff, #3a7bd5); height: 100%; width: 0%; transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);"></div>
+            </div>
+
+            <div class="input-group" style="margin-top: 20px;">
+                <input type="number" id="waterInput" placeholder="Immisa ML ayaad cabtay?" style="padding: 15px; width: 60%; border-radius: 10px; border: 2px solid #eef2f3;">
+                <button onclick="addWater()" style="padding: 15px 30px;">Ku Dar Biyo</button>
+            </div>
+            <p id="message" style="margin-top: 15px; font-weight: 500;"></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Dashboard Info</h4>
+                <p>Xogtan waa mid kumeel gaar ah oo ku kaydsan Browser-kaaga.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Health Tip</h4>
+                <p>Isku day inaad cabto 200ml saacad kasta si aad u ilaaliso tamarta.</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+            &copy; 2026 WaterTracker | Live Hydration Engine
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
