@@ -89,12 +89,16 @@ function updateUI() {
         }
     }
 }
-
 function addWater() {
-    const input = getEl("waterInput");
+    const input = getEl("waterInput"); 
     const msgArea = getEl("message"); 
     const amount = input ? parseInt(input.value) : 0;
 
+    if (msgArea) {
+        msgArea.textContent = "";
+    }
+
+   
     if (isNaN(amount) || amount <= 0) {
         if (msgArea) {
             msgArea.textContent = currentLang === "so" ? "❌ Fadlan geli tiro sax ah!" : "❌ Please enter a valid amount!";
@@ -104,19 +108,39 @@ function addWater() {
     }
 
     if ((waterData.total + amount) > savedGoal) {
-        let fariin = currentLang === "so" ? "Hadafkaagii waad gaartay! Ma rabtaa inaad ku darto biyo dheeraad ah?" : "Goal reached! Add more anyway?";
-        if (!confirm(fariin)) return;
+        if (msgArea) {
+            msgArea.textContent = currentLang === "so" ? `❌ Ma ku dari kartid ${amount}ml (Hadafkaaga guud waa ${savedGoal}ml)!` : `❌ Cannot add ${amount}ml (Goal is ${savedGoal}ml)!`;
+            msgArea.style.color = "#e74c3c";
+        }
+        if (input) input.style.border = "2px solid red";
+        return;
     }
 
-    waterData.logs.push({ amount, time: new Date().toLocaleTimeString(), date: new Date().toLocaleDateString() });
+    const now = new Date();
+    const newLog = {
+        amount: amount,
+        date: now.toLocaleDateString(),
+        time: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+
+    waterData.logs.push(newLog);
     waterData.total += amount;
+
     localStorage.setItem("waterData", JSON.stringify(waterData));
 
     updateUI();
-    if (input) input.value = "";
-    if (msgArea) msgArea.textContent = "";
+    if (input) {
+        input.value = ""; 
+        input.style.border = "1px solid #ccc";
+    }
+    
+    if (msgArea) {
+        msgArea.textContent = currentLang === "so" ? "✅ Waa lagu daray!" : "✅ Added successfully!";
+        msgArea.style.color = "#27ae60";
+    }
 }
-
+           
+        
 // 6. HISTORY & LANGUAGES
 function displayHistory() {
     const list = getEl("logListFull"); 
